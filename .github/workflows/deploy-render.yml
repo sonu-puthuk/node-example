@@ -1,0 +1,21 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Render
+      run: |
+        curl -X POST "https://api.render.com/v1/deploys" \
+        -H "Authorization: Bearer rnd_OAAxI34Ko8ofzoNZBRThYdZt1PJm" \
+        -H "Content-Type: application/json" \
+        -d "{"web": {"buildCommand": "your-build-command", "startCommand": "your-start-command"}}"
