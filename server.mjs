@@ -12,7 +12,7 @@ app.post('/transactions', (req, res) => {
             "cryptoAmount": 0.000002,
             "address": "0xF845f557b16F2399b9807129f40773F5c804fcf8",
             "fromAddress": "0xF845f557b16F2399b9807129f40773F5c804fcf8",
-            "fee": 50,
+            "fee": "50",
             "feeLimit": 100,
             "description": "",
             "memo": "The quick brown fox jumps over a lazy dog",
