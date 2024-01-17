@@ -20,9 +20,9 @@ jobs:
         -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
         -H "Content-Type: application/json"
 
-    - name: Pause for 30 seconds
+    - name: Pause for 60 seconds
       run: |
-          sleep 30
+          sleep 60
 
     - name: Run tests
       uses: convictional/trigger-workflow-and-wait@v1.6.1
