@@ -18,3 +18,14 @@ jobs:
         curl -X POST "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys" \
         -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
         -H "Content-Type: application/json"
+
+    - name: Run tests
+      uses: convictional/trigger-workflow-and-wait@v1.6.1
+      with:
+        owner: sonu-puthuk
+        repo: contract-tests
+        github_token: ${{ secrets.PAT_TEST_RUN }}
+        workflow_file_name: contract-test.yml
+        ref: main
+        wait_interval: 10
+        wait_workflow: true
