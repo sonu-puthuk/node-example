@@ -44,7 +44,7 @@ app.post('/generate-address', (req, res) => {
             "dmin": 0.0005,
             "dmax": 100000,
             "deposit": true,
-            "dfee": 0
+            "dfee": 0.0005
         },
         "message": "Request successfully completed",
         "statusText": "SUCCESS",
