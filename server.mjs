@@ -31,6 +31,30 @@ app.post('/transactions', (req, res) => {
     res.send(prettyData);
 });
 
+app.post('/generate-address', (req, res) => {
+    const responseData = {
+        "statusCode": 200,
+        "data": {
+            "coin": "BTC",
+            "address": "bc1q0uq3j998my8nsl6j9w43pdd6knyzqsyy53qwfw",
+            "legacyaddress": "1CaY8ekUkt4HF7piz4FuWH5jm81UUuhVz5",
+            "status": "completed",
+            "tag": "",
+            "name": "Bitcoin",
+            "dmin": 0.0005,
+            "dmax": 100000,
+            "deposit": true,
+            "dfee": 0
+        },
+        "message": "Request successfully completed",
+        "statusText": "SUCCESS",
+        "timestamp": "2023-06-06T07:36:50.701Z"
+    };
+    const prettyData = JSON.stringify(responseData, null, 2);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(prettyData);
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
